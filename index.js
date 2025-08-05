@@ -1,4 +1,4 @@
-const { Client,LocalAuth } = require('whatsapp-web.js');
+const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 
 const client = new Client(
@@ -23,7 +23,7 @@ client.on('message', async (message) => {
     const botId = client.info.wid._serialized;
     console.log(botId);
     const mentionedIds = message.mentionedIds || [];
-    if(mentionedIds.includes(botId)){
+    if (mentionedIds.includes(botId)) {
         console.log('Bot was mentioned in the group');
         console.log(`Message: ${message.body}`);
         await message.reply('Hey you mentioned me!')
